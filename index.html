@@ -1,9 +1,51 @@
 <html>
 <head>
-	<title>Versão 1.0.0</text>
+	<title>Versão 1.0.0</title>
 </head>
 <body>
 
+	<script>
+		function calcular(){
+			var altura = document.getElementById("inputAltura").value;
+			var peso = document.getElementById("inputPeso").value;
+			var resultado = peso/(altura*altura);
+			document.getElementById("resultadoIMC").innerHTML = resultado;
+			switch(resultado){
+				case (resultado < 18.5):
+					alert("Abaixo do peso");
+				case (18.5 > resultado  < 24.9):
+					alert("Peso saudável");
+				case ( 25 > resultado < 29.9):
+					alert("Sobrepeso");
+				case (resultado> 30 < 34.9):
+					alert("Obesidade grau I");
+				case (resultado> 35 < 39.9):
+					alert("Obesidade grau II");
+				case (resultado> 40):
+					alert("Obesidade grau III (Mórbida)");
+			}
+
+		}
+	</script>
+	<div class="box01">
+		<text>Altura<text>
+			<input id="inputAltura"type="text" placeholder="Ex. 1.75">
+		<text>Peso<text>
+			<input id="inputPeso"type="text" placeholder="Ex. 76.50">
+			<button onclick="calcular();">Calcular IMC</button>
+			<h3 id="resultadoIMC">IMC:</h3>
+	</div>
+	<style>
+		.box01{
+			background-color:#111111;
+			height:200px;
+			width:200px;
+			color:white;
+			position:absolute;
+			top:200px; left:250px;
+		}
+
+	</style>
 
 </body>
 <footer>
